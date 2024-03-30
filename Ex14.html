@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Template</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: pink;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden; /* Clear the float */
+}
+
+.column {
+    width: 48%; /* Adjust as needed */
+    float: left;
+    margin-right: 2%; /* Adjust as needed */
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+.column:last-child {
+    margin-right: 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Header</h1>
+    </div>
+    <div class="container">
+        <div class="column">
+            <p>"The only way to do great work is to love what you do." - Steve Jobs</p>
+        </div>
+        <div class="column">
+            <p>"In the end, it's not the years in your life that count. It's the life in your years." - Abraham Lincoln</p>
+        </div>
+    </div>
+</body>
+</html>

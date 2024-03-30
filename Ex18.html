@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Square Layout</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <label for="rows">Enter number of rows:</label>
+    <input type="number" id="rows" min="1"><br><br>
+
+    <label for="columns">Enter number of columns:</label>
+    <input type="number" id="columns" min="1"><br><br>
+
+    <button onclick="createSquare()">Create Square</button>
+
+    <div id="square-container"></div>
+
+    <script>
+        function createSquare() {
+            var rows = parseInt(document.getElementById("rows").value);
+            var columns = parseInt(document.getElementById("columns").value);
+            var squareContainer = document.getElementById("square-container");
+
+            if (isNaN(rows) || isNaN(columns) || rows < 1 || columns < 1) {
+                alert("Please enter valid rows and columns.");
+                return;
+            }
+
+            var table = document.createElement("table");
+
+            for (var i = 0; i < rows; i++) {
+                var row = document.createElement("tr");
+                for (var j = 0; j < columns; j++) {
+                    var cell = document.createElement("td");
+                    if ((i + j) % 2 === 0) {
+                        cell.style.backgroundColor = "black";
+                    } else {
+                        cell.style.backgroundColor = "red";
+                    }
+                    row.appendChild(cell);
+                }
+                table.appendChild(row);
+            }
+
+            squareContainer.innerHTML = "";
+            squareContainer.appendChild(table);
+        }
+    </script>
+</body>
+</html>

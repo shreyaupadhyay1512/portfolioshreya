@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+    <p id="timer">0 seconds</p>
+
+    <script>
+        var timerId;
+        var seconds = 0;
+
+        document.getElementById("startBtn").addEventListener("click", startTimer);
+        document.getElementById("stopBtn").addEventListener("click", stopTimer);
+
+        function startTimer() {
+            // Clear any existing timer
+            clearInterval(timerId);
+
+            // Start the timer
+            timerId = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            seconds++;
+            document.getElementById("timer").textContent = seconds + " seconds";
+        }
+
+        function stopTimer() {
+            // Stop the timer
+            clearInterval(timerId);
+        }
+    </script>
+</body>
+</html>

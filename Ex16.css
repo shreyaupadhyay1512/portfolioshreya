@@ -1,0 +1,15 @@
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-container img {
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    margin: 10px;
+}
+
+.image-container img:hover {
+    transform: scale(1.2);
+}

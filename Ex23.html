@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Cards</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            background-color: #f9f9f9;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .card p {
+            margin: 0;
+            color: #666;
+        }
+
+        .card .date {
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="event-container"></div>
+
+    <script>
+        // Define an array of events with image, title, date, and description fields
+        var events = [
+            {
+                image: "event1.jpg",
+                title: "Music Concert",
+                date: "March 30, 2024",
+                description: "Join us for an electrifying night of music and entertainment at our annual music concert! Experience the thrill as renowned artists take the stage to perform their greatest hits, spanning various genres from rock and pop to jazz and classical. Get ready to dance, sing along, and create unforgettable memories with friends and fellow music enthusiasts. Whether you're a die-hard fan or simply looking for a fun night out, this concert promises to deliver an unforgettable experience filled with rhythm, melody, and soulful performances"
+            },
+            {
+                image: "event2.jpg",
+                title: "Sports Event",
+                date: "April 10, 2024",
+                description: "Get ready to witness thrilling athleticism and fierce competition at our annual sports tournament! Cheer on your favorite teams as they battle it out on the field, showcasing their skills and determination in a variety of exciting sports. From heart-pounding matches to nail-biting finishes, every moment promises adrenaline-fueled excitement and unforgettable action. Whether you're a passionate sports fan or simply enjoy the thrill of competition, this tournament offers a thrilling experience for spectators of all ages. So grab your friends and family, and join us for a day of fun, camaraderie, and sporting excellence!"
+            },
+            {
+                image: "event3.jpg",
+                title: "Art Exhibition",
+                date: "May 5, 2024",
+                description: " Immerse yourself in a world of creativity and inspiration at our exclusive art exhibition! Discover a diverse collection of captivating artworks by talented artists from around the globe, spanning diverse styles and mediums. From stunning paintings and sculptures to thought-provoking installations and digital art, there's something to enchant every art lover. Meet the artists, explore their unique perspectives, and gain insights into their creative process. Whether you're an avid collector, aspiring artist, or simply appreciate the beauty of visual expression, this exhibition offers a unique opportunity to experience the power of art firsthand."
+            }
+        ];
+
+        // Function to generate dynamic cards for each event
+        function generateEventCards() {
+            var eventContainer = document.getElementById("event-container");
+
+            events.forEach(function(event) {
+                var card = document.createElement("div");
+                card.classList.add("card");
+
+                var image = document.createElement("img");
+                image.src = event.image;
+                card.appendChild(image);
+
+                var title = document.createElement("h2");
+                title.textContent = event.title;
+                card.appendChild(title);
+
+                var date = document.createElement("p");
+                date.classList.add("date");
+                date.textContent = event.date;
+                card.appendChild(date);
+
+                var description = document.createElement("p");
+                description.textContent = event.description;
+                card.appendChild(description);
+
+                eventContainer.appendChild(card);
+            });
+        }
+
+        // Call the function to generate event cards
+        generateEventCards();
+    </script>
+</body>
+</html>
